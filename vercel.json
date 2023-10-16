@@ -10,5 +10,5 @@
     { "src": "^/realtime-code-editor/(.*)", "dest": "realtime-code-editor/$1" },
     { "handle": "filesystem" },
     { "src": ".*", "dest": "index.js" }
-  }
+  ]
 }
