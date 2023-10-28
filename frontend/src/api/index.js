@@ -1,5 +1,5 @@
 import axios from "axios";
-const API = axios.create({ baseURL: "http://localhost:8000" });
+const API = axios.create({ baseURL: "https://cyblog-new-64bn.vercel.app/" });
 
 export const api = {
   login: (email, password) => API.post("/auth/login", { email, password }),
@@ -12,15 +12,15 @@ export const api = {
     API.put("/users/user", { formData: newOb }, { params }),
   putBlog: (newBlog, params) =>
     API.put("/blogs", { blog: newBlog }, { params }),
-  soertedUsers: ()=> API.get("/users/sorteduser", {}),
+  soertedUsers: () => API.get("/users/sorteduser", {}),
   matchUser: (params) => API.put("/users/match", {}, { params }),
   getMatchedUsers: (params) => API.get("/users/matched", { params }),
   getPendingUsers: (params) => API.get("/users/pending", { params }),
   getRejectedUsers: (params) => API.get("/users/reject", { params }),
   rejectUser: (params) => API.put("/users/reject", {}, { params }),
   unrejectUser: (params) => API.put("/users/unreject", {}, { params }),
-  getAllblogsSorted: ()=> API.get("/blogs/sortedblogs", {}),
-  getAllblogs: ()=>API.get("/blogs",{}),
-  deleteblog: (params)=>API.get("/blogs/deleteblog",{params}),
-  getUserBlog:(params)=>API.get("/blogs//userBlog",{params}),
+  getAllblogsSorted: () => API.get("/blogs/sortedblogs", {}),
+  getAllblogs: () => API.get("/blogs", {}),
+  deleteblog: (params) => API.get("/blogs/deleteblog", { params }),
+  getUserBlog: (params) => API.get("/blogs//userBlog", { params }),
 };
