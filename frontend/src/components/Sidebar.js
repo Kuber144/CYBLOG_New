@@ -1,8 +1,8 @@
 /* eslint-disable */
-import React from 'react';
-import { slide as Menu } from 'react-burger-menu';
+import React from "react";
+import { slide as Menu } from "react-burger-menu";
 
-export default Sidebar => {
+export default (Sidebar) => {
   return (
     <Menu>
       <a className="menu-item" href="/">
@@ -23,7 +23,7 @@ export default Sidebar => {
       <a className="menu-item" href="/createpost">
         Create New Post
       </a>
-      <a className="menu-item" href="http://localhost:5000/">
+      <a className="menu-item" href="https://realtime-fronted.vercel.app/">
         Realtime Editor
       </a>
       <a className="menu-item" href="/ids">
@@ -34,7 +34,7 @@ export default Sidebar => {
       </a>
 
       <a className="menu-item" href="/WSA_Home_Page">
-            Security Asssessment Home
+        Security Asssessment Home
       </a>
     </Menu>
   );
