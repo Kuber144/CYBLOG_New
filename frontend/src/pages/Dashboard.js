@@ -21,13 +21,15 @@ export default function Dashboard({ user }) {
   }, []);
 
   return (
-    <div className="mt-32 row ">
-      <div className="grid grid-cols-2 gap-4 content-center">
+    <div className="mt-32">
+      <div className="grid grid-cols-2 gap-x-1 gap-y-20">
+        {" "}
+        {/* Added gap-x-2 to reduce horizontal gap */}
         {!!blogs.length &&
           blogs.map((blog, _index) => (
             <div
               key={_index}
-              className="snap-start lg:snap-center lg:min-w-[50vw] h-[100vh] flex justify-center items-center"
+              className="w-full flex justify-center items-center"
             >
               <BlogCard blog={blog} />
             </div>
