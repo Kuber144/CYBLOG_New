@@ -11,7 +11,7 @@ export default function BlogCardDash({ blog }) {
     requested_id: blog.username,
   };
   const blogContent =
-    blog.content.length > 400
+    blog.content && blog && blog.content.length > 400
       ? blog.content.substring(0, 400) + "..."
       : blog.content;
 
