@@ -184,7 +184,7 @@ export default function Home(user) {
                             ))}
                         </h3>
                         <div className="desc pt-2 pb-2 pr-4 pl-4 text-sm break-words">
-                          {blogg && blogg.content && blogg.content.length > 600
+                          {blogg.content.length > 600
                             ? blogg.content.substring(0, 600) + "..."
                             : blogg.content}
                         </div>
