@@ -55,9 +55,9 @@ export default function Home(user) {
   useEffect(() => {
     let isSubscribed = true;
     const fetchData = async () => {
-      const data = await fetch(
-        "https://newsapi.org/v2/everything?q=technology&sortBy=popularity&apiKey=c22c09c975254c75be22b69b38db0611"
-      );
+      const response = await fetch("/api/news");
+      const data = await response.json();
+      console.log("rgwbtge" + data);
       if (isSubscribed) {
         let newsArticles = await data.json();
         newsArticles = newsArticles.articles;
@@ -70,8 +70,7 @@ export default function Home(user) {
     return () => (isSubscribed = false);
   }, []);
 
-  // console.log(news);
-
+  console.log(news);
   // console.log(user)
   const handleClickBlog = (_id) => {
     // TODO
@@ -184,7 +183,7 @@ export default function Home(user) {
                             ))}
                         </h3>
                         <div className="desc pt-2 pb-2 pr-4 pl-4 text-sm break-words">
-                          {blogg.content.length > 600
+                          {blogg && blogg.content && blogg.content.length > 600
                             ? blogg.content.substring(0, 600) + "..."
                             : blogg.content}
                         </div>
@@ -216,9 +215,7 @@ export default function Home(user) {
           </div>
         </div>
         <div>
-          <h1 className="mt-24 text-center font-bold text-3xl">
-            This Week’s Top 5 Contributors
-          </h1>
+          <h1 className="mt-24 text-center font-bold text-3xl">Contributors</h1>
           <div className="grid grid-cols-6 justify-items-stretch gap-4">
             {" "}
             {/* Added gap-4 for horizontal spacing */}
