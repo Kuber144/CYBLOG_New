@@ -5,6 +5,7 @@ import home from "../img/home.svg";
 import { api } from "../api";
 import maleUser from "../img/profuser.svg";
 import { useCookies } from "react-cookie";
+import { app } from "../";
 
 export default function Home(user) {
   const [news, setNews] = useState(null);
@@ -55,12 +56,17 @@ export default function Home(user) {
   useEffect(() => {
     let isSubscribed = true;
     const fetchData = async () => {
-      const response = await fetch("/api/news");
-      const data = await response.json();
-      console.log("rgwbtge" + data);
+      var url =
+        "https://api.currentsapi.services/v1/latest-news?" +
+        "language=en&category=technology&" +
+        "apiKey=QvQB7mvQhYIbxwE3v7si6rN8CmkL1IcaKFr9Jy6ja6v8Q4qx";
+      var req = new Request(url);
+      const data = await fetch(req);
       if (isSubscribed) {
         let newsArticles = await data.json();
-        newsArticles = newsArticles.articles;
+        console.log(newsArticles);
+        newsArticles = newsArticles.news;
+        console.log(newsArticles);
         newsArticles = newsArticles.filter((a, i) => i < 10);
         setNews(newsArticles);
       }
@@ -70,7 +76,7 @@ export default function Home(user) {
     return () => (isSubscribed = false);
   }, []);
 
-  console.log(news);
+  // console.log("NEws" + news);
   // console.log(user)
   const handleClickBlog = (_id) => {
     // TODO
@@ -165,7 +171,9 @@ export default function Home(user) {
 
                   // className="snap-start lg:snap-center lg:min-w-[50vw] h-[100vh] flex justify-center items-center"
                 >
-                  <div className="card bg-[#E1E9F4] drop-shadow-xl max-w-[340px] md:max-w-[400px] lg:max-w-[650px] h-[85vh] lg:h-[450px] lg:mt-0 flex flex-row rounded-3xl">
+                  {/* <div className="card bg-[#E1E9F4] drop-shadow-xl max-w-[340px] md:max-w-[400px] lg:max-w-[650px] h-[85vh] lg:h-[450px] lg:mt-0 flex flex-row rounded-3xl"> */}
+                  {/* <div className="card bg-[#E1E9F4] drop-shadow-xl min-w-[340px] md:min-w-[400px] lg:min-w-[550px] min-h-[70vh] lg:min-h-[400px] lg:mt-0 flex flex-row rounded-3xl"> */}
+                  <div className="card bg-[#E1E9F4] drop-shadow-xl min-w-[500px] md:min-w-[400px] min-h-[200px] lg:min-w-[550px] min-h-[40vh] lg:min-h-[400px] lg:mt-0 flex flex-row rounded-3xl">
                     <div className="card-text">
                       <div className="title-total lg:pt-10 pb-6 pr-4 pl-4">
                         <div className="title p-4 text-right text-[#028ABE] font-semibold text-lg">
@@ -217,43 +225,91 @@ export default function Home(user) {
         <div>
           <h1 className="mt-24 text-center font-bold text-3xl">Contributors</h1>
           <div className="grid grid-cols-6 justify-items-stretch gap-4">
-            {" "}
-            {/* Added gap-4 for horizontal spacing */}
-            {contri.length &&
-              contri.map((contributor, _index) => (
-                <div
-                  key={_index}
-                  className={
-                    _index < 3
-                      ? "justify-self-center col-span-2" // Removed mt-12
-                      : "justify-self-center col-span-3" // Removed mt-12
-                  }
-                >
-                  <Link
-                    className="no-underline"
-                    to={`/profile/${contributor.username}`}
-                    state={{ search_id: contributor.username }}
-                  >
-                    <img
-                      src={contributor.img_url ? contributor.img_url : maleUser}
-                      alt=""
-                      className="h-52 rounded-full"
-                    />
-                  </Link>
-                  <Link
-                    className="no-underline"
-                    to={`/profile/${contributor.username}`}
-                    state={{ search_id: contributor.username }}
-                  >
-                    <p className="text-center font-semibold text-xl">
-                      {contributor.name}
-                    </p>
-                  </Link>
-                  <p className="text-center font-semibold text-[#028ABE] text-lg">
-                    {contributor.professional_title}
-                  </p>
-                </div>
-              ))}
+            {/* User 1 */}
+            <div className="justify-self-center col-span-2">
+              <img
+                src="https://media.istockphoto.com/id/587805156/vector/profile-picture-vector-illustration.jpg?s=612x612&w=0&k=20&c=gkvLDCgsHH-8HeQe7JsjhlOY6vRBJk_sKW9lyaLgmLo="
+                alt="User 1"
+                className="h-52 rounded-full"
+              />
+              <p className="text-center font-semibold text-xl">Kuber Jain</p>
+              <p className="text-center font-semibold text-[#028ABE] text-lg">
+                CEO
+              </p>
+            </div>
+
+            {/* User 2 */}
+            <div className="justify-self-center col-span-2">
+              <img
+                src="https://media.istockphoto.com/id/587805156/vector/profile-picture-vector-illustration.jpg?s=612x612&w=0&k=20&c=gkvLDCgsHH-8HeQe7JsjhlOY6vRBJk_sKW9lyaLgmLo="
+                alt="User 2"
+                className="h-52 rounded-full"
+              />
+              <p className="text-center font-semibold text-xl">
+                Rajat Srivastava
+              </p>
+              <p className="text-center font-semibold text-[#028ABE] text-lg">
+                CTO
+              </p>
+            </div>
+
+            {/* User 3 */}
+            <div className="justify-self-center col-span-2">
+              <img
+                src="https://media.istockphoto.com/id/587805156/vector/profile-picture-vector-illustration.jpg?s=612x612&w=0&k=20&c=gkvLDCgsHH-8HeQe7JsjhlOY6vRBJk_sKW9lyaLgmLo="
+                alt="User 3"
+                className="h-52 rounded-full"
+              />
+              <p className="text-center font-semibold text-xl">
+                Kaushik Mullick
+              </p>
+              <p className="text-center font-semibold text-[#028ABE] text-lg">
+                CFO
+              </p>
+            </div>
+
+            {/* User 4 */}
+            <div className="justify-self-center col-span-2">
+              <img
+                src="https://media.istockphoto.com/id/587805156/vector/profile-picture-vector-illustration.jpg?s=612x612&w=0&k=20&c=gkvLDCgsHH-8HeQe7JsjhlOY6vRBJk_sKW9lyaLgmLo="
+                alt="User 4"
+                className="h-52 rounded-full"
+              />
+              <p className="text-center font-semibold text-xl">Viraj Jagtap</p>
+              <p className="text-center font-semibold text-[#028ABE] text-lg">
+                COO
+              </p>
+            </div>
+
+            {/* User 5 */}
+            <div className="justify-self-center col-span-2">
+              <img
+                src="https://media.istockphoto.com/id/587805156/vector/profile-picture-vector-illustration.jpg?s=612x612&w=0&k=20&c=gkvLDCgsHH-8HeQe7JsjhlOY6vRBJk_sKW9lyaLgmLo="
+                alt="User 5"
+                className="h-52 rounded-full"
+              />
+              <p className="text-center font-semibold text-xl">
+                Dhairya Bhadani
+              </p>
+              <p className="text-center font-semibold text-[#028ABE] text-lg">
+                CMO
+              </p>
+            </div>
+
+            {/* User 6 */}
+            <div className="justify-self-center col-span-2">
+              <img
+                src="https://media.istockphoto.com/id/587805156/vector/profile-picture-vector-illustration.jpg?s=612x612&w=0&k=20&c=gkvLDCgsHH-8HeQe7JsjhlOY6vRBJk_sKW9lyaLgmLo="
+                alt="User 6"
+                className="h-52 rounded-full"
+              />
+              <p className="text-center font-semibold text-xl">
+                Ravindra Kumar
+              </p>
+              <p className="text-center font-semibold text-[#028ABE] text-lg">
+                CPO
+              </p>
+            </div>
           </div>
         </div>
         <footer className="bg-[#024481] mt-32 h-60 grid grid-cols-2 gap-10 place-items-center text-white">
