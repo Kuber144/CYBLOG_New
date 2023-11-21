@@ -6,7 +6,7 @@ import { api } from "../api";
 import maleUser from "../img/profuser.svg";
 import { useCookies } from "react-cookie";
 import { app } from "../";
-
+import HeroSection from "../pages/HeroSection";
 export default function Home(user) {
   const [news, setNews] = useState(null);
   const [contri, setContri] = useState([]);
@@ -89,17 +89,15 @@ export default function Home(user) {
 
   return (
     <>
-      <div className="mt-[3.5rem]">
-        <img src={home} alt="home" />
-      </div>
+      <HeroSection />
       <div>
         <p className="text-center text-3xl mt-12 font-bold">
-          Welcome to MalwareBits: Your Source for Cyber Security Education
+          Welcome to CySecLearn: Your Source for Cyber Security Learning
         </p>
         <p className="text-center text-xl mt-6 ml-20 mr-20">
           Are you concerned about your online safety and privacy? Do you want to
           learn how to protect yourself, your data, and your digital assets from
-          cyber threats? Look no further! MalwareBits is your comprehensive
+          cyber threats? Look no further! CySecLearn is your comprehensive
           resource for all things related to cyber security education. Our
           Unique Tools Intrusion Detection System: Enhance your practical
           understanding of cyber security by exploring our Intrusion Detection
@@ -220,96 +218,6 @@ export default function Home(user) {
             >
               Explore More
             </button>
-          </div>
-        </div>
-        <div>
-          <h1 className="mt-24 text-center font-bold text-3xl">Contributors</h1>
-          <div className="grid grid-cols-6 justify-items-stretch gap-4">
-            {/* User 1 */}
-            <div className="justify-self-center col-span-2">
-              <img
-                src="https://media.istockphoto.com/id/587805156/vector/profile-picture-vector-illustration.jpg?s=612x612&w=0&k=20&c=gkvLDCgsHH-8HeQe7JsjhlOY6vRBJk_sKW9lyaLgmLo="
-                alt="User 1"
-                className="h-52 rounded-full"
-              />
-              <p className="text-center font-semibold text-xl">Kuber Jain</p>
-              <p className="text-center font-semibold text-[#028ABE] text-lg">
-                CEO
-              </p>
-            </div>
-
-            {/* User 2 */}
-            <div className="justify-self-center col-span-2">
-              <img
-                src="https://media.istockphoto.com/id/587805156/vector/profile-picture-vector-illustration.jpg?s=612x612&w=0&k=20&c=gkvLDCgsHH-8HeQe7JsjhlOY6vRBJk_sKW9lyaLgmLo="
-                alt="User 2"
-                className="h-52 rounded-full"
-              />
-              <p className="text-center font-semibold text-xl">
-                Rajat Srivastava
-              </p>
-              <p className="text-center font-semibold text-[#028ABE] text-lg">
-                CTO
-              </p>
-            </div>
-
-            {/* User 3 */}
-            <div className="justify-self-center col-span-2">
-              <img
-                src="https://media.istockphoto.com/id/587805156/vector/profile-picture-vector-illustration.jpg?s=612x612&w=0&k=20&c=gkvLDCgsHH-8HeQe7JsjhlOY6vRBJk_sKW9lyaLgmLo="
-                alt="User 3"
-                className="h-52 rounded-full"
-              />
-              <p className="text-center font-semibold text-xl">
-                Kaushik Mullick
-              </p>
-              <p className="text-center font-semibold text-[#028ABE] text-lg">
-                CFO
-              </p>
-            </div>
-
-            {/* User 4 */}
-            <div className="justify-self-center col-span-2">
-              <img
-                src="https://media.istockphoto.com/id/587805156/vector/profile-picture-vector-illustration.jpg?s=612x612&w=0&k=20&c=gkvLDCgsHH-8HeQe7JsjhlOY6vRBJk_sKW9lyaLgmLo="
-                alt="User 4"
-                className="h-52 rounded-full"
-              />
-              <p className="text-center font-semibold text-xl">Viraj Jagtap</p>
-              <p className="text-center font-semibold text-[#028ABE] text-lg">
-                COO
-              </p>
-            </div>
-
-            {/* User 5 */}
-            <div className="justify-self-center col-span-2">
-              <img
-                src="https://media.istockphoto.com/id/587805156/vector/profile-picture-vector-illustration.jpg?s=612x612&w=0&k=20&c=gkvLDCgsHH-8HeQe7JsjhlOY6vRBJk_sKW9lyaLgmLo="
-                alt="User 5"
-                className="h-52 rounded-full"
-              />
-              <p className="text-center font-semibold text-xl">
-                Dhairya Bhadani
-              </p>
-              <p className="text-center font-semibold text-[#028ABE] text-lg">
-                CMO
-              </p>
-            </div>
-
-            {/* User 6 */}
-            <div className="justify-self-center col-span-2">
-              <img
-                src="https://media.istockphoto.com/id/587805156/vector/profile-picture-vector-illustration.jpg?s=612x612&w=0&k=20&c=gkvLDCgsHH-8HeQe7JsjhlOY6vRBJk_sKW9lyaLgmLo="
-                alt="User 6"
-                className="h-52 rounded-full"
-              />
-              <p className="text-center font-semibold text-xl">
-                Ravindra Kumar
-              </p>
-              <p className="text-center font-semibold text-[#028ABE] text-lg">
-                CPO
-              </p>
-            </div>
           </div>
         </div>
         <footer className="bg-[#024481] mt-32 h-60 grid grid-cols-2 gap-10 place-items-center text-white">

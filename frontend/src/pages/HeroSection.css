@@ -1,0 +1,37 @@
+.hero-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.video-background {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: blur(5px);
+}
+
+.content {
+  z-index: 1;
+  color: #fff; /* Set text color to white */
+  font-weight: bold; /* Set text to bold */
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 4rem; /* Increase font size as needed */
+}
+
+.content p {
+  margin-top: 20px; /* Adjust margin as needed */
+  font-size: 1.7rem; /* Increase font size as needed */
+}

@@ -16,11 +16,12 @@ import RejectedUsers from "./pages/RejectedUsers";
 import Profile from "./pages/Profile";
 import Dashboard from "./pages/Dashboard";
 import ViewBlog from "./pages/ViewBlog";
-import OtherUser from "./pages/OtherUser"
+import OtherUser from "./pages/OtherUser";
 import IdsPage from "./components/Form/idsPage";
 import BestModel from "./components/Form/bestModel";
-import Scan from "./pages/Scan"
-import WSA_Home from  "./webSecurityAssessment/pages/Home" 
+import Scan from "./pages/Scan";
+import WSA_Home from "./webSecurityAssessment/pages/Home";
+import Contri from "./pages/Contributor";
 
 function App() {
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
@@ -71,7 +72,7 @@ function App() {
             </>
           }
         />
-         
+
         <Route
           path="/"
           element={
@@ -114,78 +115,77 @@ function App() {
           }
         />
         <Route
-            path="/pendingusers"
-            element={
-              <>
-                {cookies["UserId"] && (
-                  <>
-                    <Navbar user={user} />
-                    <PendingUsers user={user} />
-                  </>
-                )}
-                {!cookies["UserId"] && <Navigate to="/" />}
-              </>
-            }
-          />
-          <Route
-            path="/profile"
-            element={
-              <>
-                {cookies["UserId"] && (
-                  <>
-                    <Navbar user={user} />
-                    <Profile user = {user} />
-                  </>
-                )}
-                {!cookies["UserId"] && <Navigate to="/" />}
-              </>
-            }
-          />
-          <Route
-            path="/profile/:id"
-            element={
-              <>
-                {cookies["UserId"] && (
-                  <>
-                    <Navbar user={user} />
-                    <OtherUser user = {user} setUser={setUser}/>
-                  </>
-                )}
-                {!cookies["UserId"] && <Navigate to="/" />}
-              </>
-            }
-          />
-          <Route
-            path="/rejectedusers"
-            element={
-              <>
-                {cookies["UserId"] && (
-                  <>
-                    <Navbar user={user} />
-                    <RejectedUsers setCurUser={setUser} />
-                  </>
-                )}
-                {!cookies["UserId"] && <Navigate to="/" />}
-              </>
-            }
-          />
-           <Route
-            path="/dashboard"
-            element={
-              <>
-                {cookies["UserId"] && (
-                  <>
-                    <Navbar user={user} />
-                    <Dashboard user={user} />
-                  </>
-                )}
-                {!cookies["UserId"] && <Navigate to="/" />}
-              </>
-            }
-          />
+          path="/pendingusers"
+          element={
+            <>
+              {cookies["UserId"] && (
+                <>
+                  <Navbar user={user} />
+                  <PendingUsers user={user} />
+                </>
+              )}
+              {!cookies["UserId"] && <Navigate to="/" />}
+            </>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <>
+              {cookies["UserId"] && (
+                <>
+                  <Navbar user={user} />
+                  <Profile user={user} />
+                </>
+              )}
+              {!cookies["UserId"] && <Navigate to="/" />}
+            </>
+          }
+        />
+        <Route
+          path="/profile/:id"
+          element={
+            <>
+              {cookies["UserId"] && (
+                <>
+                  <Navbar user={user} />
+                  <OtherUser user={user} setUser={setUser} />
+                </>
+              )}
+              {!cookies["UserId"] && <Navigate to="/" />}
+            </>
+          }
+        />
+        <Route
+          path="/rejectedusers"
+          element={
+            <>
+              {cookies["UserId"] && (
+                <>
+                  <Navbar user={user} />
+                  <RejectedUsers setCurUser={setUser} />
+                </>
+              )}
+              {!cookies["UserId"] && <Navigate to="/" />}
+            </>
+          }
+        />
+        <Route
+          path="/dashboard"
+          element={
+            <>
+              {cookies["UserId"] && (
+                <>
+                  <Navbar user={user} />
+                  <Dashboard user={user} />
+                </>
+              )}
+              {!cookies["UserId"] && <Navigate to="/" />}
+            </>
+          }
+        />
 
-         
-           <Route
+        <Route
           path="/viewblog"
           element={
             <>
@@ -199,7 +199,7 @@ function App() {
             </>
           }
         />
-         <Route
+        <Route
           path="/ids"
           element={
             <>
@@ -214,57 +214,61 @@ function App() {
           }
         />
 
-         <Route
-           path="/scan"
-           element={
+        <Route
+          path="/scan"
+          element={
             <>
               {cookies["UserId"] && (
                 <>
-                
-                  <Scan/>
+                  <Scan />
                 </>
               )}
               {!cookies["UserId"] && <Navigate to="/" />}
-
             </>
-           }
+          }
+        />
 
-           />
-
-            <Route
-           path="/scan"
-           element={
+        <Route
+          path="/scan"
+          element={
             <>
               {cookies["UserId"] && (
                 <>
-                
-                  <Scan/>
+                  <Scan />
                 </>
               )}
               {!cookies["UserId"] && <Navigate to="/" />}
-
             </>
-           }
+          }
+        />
 
-           />
-
-
-          <Route
-           path="/WSA_Home_Page"
-           element={
+        <Route
+          path="/WSA_Home_Page"
+          element={
             <>
               {cookies["UserId"] && (
                 <>
-                
-                  <WSA_Home/>
+                  <WSA_Home />
                 </>
               )}
               {!cookies["UserId"] && <Navigate to="/" />}
-
             </>
-           }
-
-           />
+          }
+        />
+        <Route
+          path="/Contri"
+          element={
+            <>
+              {cookies["UserId"] && (
+                <>
+                  <Navbar user={user} />
+                  <Contri />
+                </>
+              )}
+              {!cookies["UserId"] && <Navigate to="/" />}
+            </>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

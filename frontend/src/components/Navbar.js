@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import maleUser from "../img/profuser.svg";
 import Sidebar from "./Sidebar";
 
-export default function Navbar({ user}) {
+export default function Navbar({ user }) {
   const location = useLocation();
   const { pathname } = location;
   const splitLocation = pathname.split("/");
@@ -25,18 +25,16 @@ export default function Navbar({ user}) {
 
   return (
     <div className="fixed w-full top-0 z-20" ref={ref}>
-      {user && (<Sidebar/>)}
-      <nav
-        className="relative flex flex-wrap items-center justify-between py-1 shadow-lg md:shadow-md mb-3 bg-white"
-      >
+      {user && <Sidebar />}
+      <nav className="relative flex flex-wrap items-center justify-between py-1 shadow-lg md:shadow-md mb-3 bg-white">
         <div className="container px-6 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <Link
-              className="text-2xl leading-relaxed mr-4 py-2 whitespace-nowrap text-[#fd2f6e] flex flex-row ml-10" 
+              className="text-2xl leading-relaxed mr-4 py-2 whitespace-nowrap text-[#fd2f6e] flex flex-row ml-10"
               to="/"
             >
               <img src={logo} className="h-10 mt-2 mr-1" alt="logo" />
-              <span className="text-[#028ABE] mt-2">MalwareBits</span>
+              <span className="text-[#028ABE] mt-2">CySecLearn</span>
             </Link>
           </div>
           <div
@@ -77,7 +75,6 @@ export default function Navbar({ user}) {
                   <Link
                     className="px-3 py-2 flex items-center text-lg font-semibold leading-snug hover:opacity-75"
                     to="/profile"
-                    
                     onClick={() => setNavbarOpen(!navbarOpen)}
                   >
                     <img

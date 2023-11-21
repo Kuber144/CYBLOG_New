@@ -1,8 +1,8 @@
 import React from "react";
 import "../App.css";
-import { Button } from "./Button";
+// import { Button } from "./Button";
 import "./HeroSection.css";
-import skyGif from "../img/Sky.gif";
+// import skyGif from "../img/Sky.gif";
 import backVid from "../videos/video1.mp4";
 
 function HeroSection() {
