@@ -6,7 +6,7 @@ import { api } from "../api";
 import maleUser from "../img/profuser.svg";
 import { useCookies } from "react-cookie";
 import { app } from "../";
-import HeroSection from "../pages/HeroSection";
+import HeroSection from "../pages/HeroSection2";
 export default function Home(user) {
   const [news, setNews] = useState(null);
   const [contri, setContri] = useState([]);

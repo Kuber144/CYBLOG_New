@@ -131,7 +131,7 @@
     padding: 4rem;
     /* Set initial background image */
     background: url('https://images.unsplash.com/photo-1580584126903-c17d41830450?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1939&q=80') center center/cover no-repeat;
-    animation: slideshow 30s linear infinite;
+    animation: slideshow 13s linear infinite;
   }
   
   @keyframes slideshow {

@@ -32,9 +32,6 @@ export default (Sidebar) => {
       <a className="menu-item" href="/Contri">
         Project Members
       </a>
-      <a className="menu-item" href="/WSA_Home_Page">
-        Website Security Assessment
-      </a>
 
       <a className="menu-item" href="/WSA_Home_Page">
         Security Asssessment Home

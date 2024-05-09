@@ -1,24 +1,16 @@
-import React from "react";
-import backVid from "../videos/video1.mp4";
-import "./HeroSection.css";
+import React from 'react';
+import '../App.css';
+import { Button } from '../webSecurityAssessment/Button.js';
+import './HeroSection.css';
+import backVid from '../videos/video2.mp4'
 
 function HeroSection() {
   return (
-    <div className="hero-container">
-      <video src={backVid} autoPlay loop muted className="video-background" />
-      <div className="content">
-        <h1>Welcome to CySecLearn!</h1>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <p className="centered-text">
-          This is a community of cybersecurity executives dedicated to
-          peer-driven collaboration, knowledge sharing, and technology
-          education.
-        </p>
-      </div>
+    <div className='hero-container'>
+      <video src={backVid} autoPlay loop muted />
+      {/* <img src={skyGif} alt='Background GIF' className='background-gif' /> */}
+      <h1>Scan Websites</h1>
+      <h2> Perform Passive Scan on single or multiple websites to detect web security threats and vulnerabilities </h2>
     </div>
   );
 }

@@ -11,7 +11,7 @@ export default function BlogCardDash({ blog }) {
     requested_id: blog.username,
   };
   const blogContent =
-    blog.content && blog && blog.content.length > 400
+    blog.content.length > 400
       ? blog.content.substring(0, 400) + "..."
       : blog.content;
 
@@ -36,7 +36,7 @@ export default function BlogCardDash({ blog }) {
   };
 
   return (
-    <div className="card bg-[#E1E9F4] drop-shadow-xl min-w-[500px] md:min-w-[400px] min-h-[200px] lg:min-w-[550px] min-h-[40vh] lg:min-h-[400px] lg:mt-0 flex flex-row rounded-3xl">
+    <div className="card bg-[#DDE8F0] drop-shadow-xl max-w-[340px] md:max-w-[400px] lg:max-w-[650px] h-[85vh] lg:h-[450px] mt-10 lg:mt-0 flex flex-row rounded-3xl">
       <div className="card-text">
         <div className="title-total lg:pt-10 pb-6 pr-4 pl-4">
           <div className="title p-4 text-right text-[#028ABE] font-semibold text-lg">
